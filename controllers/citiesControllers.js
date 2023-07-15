@@ -7,9 +7,7 @@ const citiesControllers = {
 
         try {
             cities = await Cities.find()
-        } catch (err) {
-            error = err
-        }
+        } catch (err) {error = err}
         res.json({
             response: error ? "ERROR" : { cities },
             success: error ? false : true,
@@ -65,7 +63,7 @@ const citiesControllers = {
                     language: language,
                 }).save()
             } else {
-                error = "this city already exists in the DB" + CityExist[0]._id
+                error = "This city already exists in the DB" + CityExist[0]._id
             }
         } catch (err) { error = err }
 
